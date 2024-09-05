@@ -175,7 +175,6 @@ public class NestedFieldTransform<R extends ConnectRecord<R>> implements Transfo
 
     private Object convertToSchemaType(Schema fieldSchema, Object fieldValue) {
         try {
-            log.info("Pops fieldSchema: " + fieldSchema.name() + " type: " + fieldSchema.type());
             switch (fieldSchema.type()) {
                 case STRING:
                     return fieldValue.toString();
@@ -195,10 +194,8 @@ public class NestedFieldTransform<R extends ConnectRecord<R>> implements Transfo
                     break;
                 case INT32:
                     if (fieldValue instanceof Number) {
-                        log.info("Pops fieldValue int 32: " + fieldValue);
                         return ((Number) fieldValue).intValue();
                     } else if (fieldValue instanceof String) {
-                        log.info("Pops fieldValue int 32: " + fieldValue);
                         return Integer.parseInt((String) fieldValue);
                     }
                     break;

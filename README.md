@@ -4,7 +4,7 @@
 1. Navigate to the project directory:
 
 ```sh
-cd kafka-connect-smt-nested-field
+cd ConnectNestedSMT
 ```
 
 2. Build the project using Maven:
